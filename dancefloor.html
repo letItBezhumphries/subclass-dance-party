@@ -6,11 +6,21 @@
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
     <script src="src/blinkyDancer.js"></script>
+    <script src="src/stormTrooperDancer.js"></script>
+    <script src="src/blinkyDancer.js"></script>
+    <script src="src/SaberFight.js"></script>
+    <script src="src/C3PO.js"></script>
   </head>
   <body>
     <div class="topbar">
-      <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>    </div>
+      <span class="title">Star Wars Dance Party</span>
+      <button class="lineUpButton">Line Up</button>
+      <button class="lineUpC3POs" data-dancer-maker-function-name="C3PO">Line Up CPOs</button>
+      <video class="musicPlayer" controls autoplay name="media"><source src="src/Music.mp3" type="audio/mpeg">
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">add a blinky dancer</a>    </div>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeStormTrooperDancer">add a Storm Trooper Dancer</a>    </div>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="SaberFight">Dance Battle</a>    </div>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="C3PO">add C3PO</a>    </div>
     <script src="src/init.js"></script>
   </body>
 </html>

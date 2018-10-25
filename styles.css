@@ -5,6 +5,8 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-image: url("https://cdna.artstation.com/p/assets/images/images/007/887/382/large/philip-gilbert-1.jpg?1509143459");
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -19,9 +21,83 @@ body, a:link, a:visited, a:active{
 }
 .title{
   background-color: #777;
+  position: center
 }
+
+.lineUpButton {
+  background: #92c7eb;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  border: none;
+  padding: 20px;
+  width: 70px;
+  border-radius: 900px;
+  height: 70px;
+  transition: all 0.5s;
+  cursor: pointer;
+ }
+ .lineUpButton:hover
+ {
+  width: 75px;
+  height: 75px;
+  background-color: #008CBA;
+  color: red;
+}
+
+.lineUpC3POs {
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  border: none;
+  padding: 20px;
+  width: 70px;
+  border-radius: 900px;
+  height: 70px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.musicPlayer {
+
+}
+ 
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  
+  
   position:absolute;
+}
+
+.stormTrooperDancer {
+  height: 5px;
+  width: 10%;
+  border-radius:10px;
+  position: absolute;
+  content: url("src/stormtrooper.gif");
+}
+.stormTrooperDancer:hover {
+  
+}
+
+
+/* dancers */
+
+.C3PO {  
+  position:absolute;
+  height: 25%;
+  width: 25%;
+  content: url("src/DancingC3PO.gif");
+}
+
+.SaberFight {
+  height: 25%;
+  width: 25%;
+  position: absolute;
+  content: url("src/battle.gif");
+}
+.SaberFight:hover {
+    cursor: pointer;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
+  
 }

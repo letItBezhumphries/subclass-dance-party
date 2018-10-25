@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -19,7 +20,7 @@ $(document).ready(function() {
 
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
-
+    
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
@@ -28,6 +29,40 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
+
+  
+
+  $('.lineUpButton').on('click', function() {
+    console.log(window.dancers);
+    for (var i = 0, top = 15; i < window.dancers.length; i++, top += 5) {
+      if ($(window.dancers[i].$node.data !== 'C3PO')) {
+        $(window.dancers[i].$node).animate({
+          left: '0%',
+          top: top + '%'
+        }, 2000);
+      } 
+    }
+  });
+
+  $('.lineUpC3POs').on('click', function(event) {
+    var targetItems = $(this).data('dancer-maker-function-name');
+    console.log(targetItems);
+    //listen for click event on element
+    //grab the elements data attribute value dancerMakerFunctionName
+    //loop over the window.dancers
+    for(var i = 0, top = 15; i < window.dancers.length; i++, top += 5) {
+      if ($(window.dancers[i].$node.data === targetItems)) {
+        console.log($(window.dancers[i].$node.data));
+        $(window.dancers[i].$node).animate({
+          left: '80%',
+          top: top + '%'  
+        }, 2000);
+      }
+    }  
+  });
+
+    
 });
 
