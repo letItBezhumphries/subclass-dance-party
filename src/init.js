@@ -32,36 +32,63 @@ $(document).ready(function() {
     window.dancers.push(dancer);
   });
 
-  
-
   $('.lineUpButton').on('click', function() {
-    console.log(window.dancers);
-    for (var i = 0, top = 15; i < window.dancers.length; i++, top += 5) {
-      if ($(window.dancers[i].$node.data !== 'C3PO')) {
-        $(window.dancers[i].$node).animate({
-          left: '0%',
-          top: top + '%'
-        }, 2000);
-      } 
+    var firstDancer, lastDancer;
+    //store the index for the last dancer added which will serve and the anchor position spread of lineup
+    var lastDancerIndex = window.dancers.length - 1; 
+    //iterate over the window.dancers array in reverse order
+    //set a starting top value and left value and increment values to create relative positioning using pythagorean theorem
+    //and perspective sizing adjustments to height and width values
+    for (let i = lastDancerIndex, top = 450, left = 500, height = 10, width = 10; 
+      i >= 0; 
+      i--, top += 25, left -= 65, height += 5, width += 2) {
+      // firstDancer = $(window.dancers[0].$node);
+      lastDancer = $(window.dancers[lastDancerIndex].$node);
+      // console.log('last:', lastDancer.position(), 'first:', firstDancer.position());
+      
+      //set the pixel coordinates for where to anchor the line of dancers
+      lastDancer.css({top: '171px', left: '544px'});
+
+      $(window.dancers[i].$node).animate({
+        left: left + 'px',
+        top: top + 'px',
+        height: height + '%',
+        width: width + '%'
+      }, 5000);
     }
   });
 
-  $('.lineUpC3POs').on('click', function(event) {
-    var targetItems = $(this).data('dancer-maker-function-name');
-    console.log(targetItems);
-    //listen for click event on element
-    //grab the elements data attribute value dancerMakerFunctionName
-    //loop over the window.dancers
-    for(var i = 0, top = 15; i < window.dancers.length; i++, top += 5) {
-      if ($(window.dancers[i].$node.data === targetItems)) {
-        console.log($(window.dancers[i].$node.data));
-        $(window.dancers[i].$node).animate({
-          left: '80%',
-          top: top + '%'  
-        }, 2000);
-      }
-    }  
-  });
+  // $('.lineUpButton').on('click', function() {
+  //   console.log(window.dancers);
+  //   for (var i = 0, top = 15; i < window.dancers.length; i++, top += 5) {
+  //     if ($(window.dancers[i].$node.className === 'C3PO')) {
+  //       $(window.dancers[i].$node).animate({
+  //         left: '0%',
+  //         top: top + '%'
+  //       }, 1000);
+  //     } 
+  //   }
+  // });
+
+  // $('.lineUpC3POs').on('click', function(event) {
+  //   var targetItems = $(this).data('dancer-maker-function-name');
+  //   console.log(targetItems);
+  //   //listen for click event on element
+  //   //grab the elements data attribute value dancerMakerFunctionName
+  //   //loop over the window.dancers
+  //   for(var i = 0, top = 15; i < window.dancers.length; i++, top += 5) {
+  //     if ($(window.dancers[i].$node.data === targetItems)) {
+  //       console.log($(window.dancers[i].$node.data));
+  //       $(window.dancers[i].$node).animate({
+  //         left: '80%',
+  //         top: top + '%'  
+  //       }, 1000);
+  //     }
+  //   }  
+  // });
+
+
+
 
     
 });

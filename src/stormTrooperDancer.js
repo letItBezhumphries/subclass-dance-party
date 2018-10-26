@@ -11,20 +11,21 @@ MakeStormTrooperDancer.prototype.constructor = MakeStormTrooperDancer;
 MakeStormTrooperDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
   //this.$node.slideToggle().animate({ left: "-=400" }, 500)
-  //this.$node.animate({"left":Math.random()*140, "top":Math.random()*800}, 3000);
-  //this.$node.animate({"left":Math.random()*1400, "top":Math.random()*800}, 3000);
-  this.$node.css("transform","rotate"+ Math.random()* 180 + "deg)");
-  this.$node.animate({height: "300px"});
+  //this.$node.animate({"left":"+=200px", "top": 200, "right":"-=50px"  },1000);
+  //this.$node.effect("bounce", { direction:'left', times:5 }, 300);
+  //this.$node.animate({"left":1400, "top":Math.random()*800}, 3000);
+  //this.$node.css("transform","rotate"+ Math.random()* 180 + "deg)");
+  
   
   // this.top = $("body").height() * Math.random();
   // this.left = $("body").width() * Math.random();
   // this.setPosition(this.top, this.left);
 
-      // change size of dancer
+     
   // if (this.$node.css('width').substr(0,2) === '20' && this.$node.css('display') === 'block'){
   //   this.$node.css('width', '100px');
   // }
-  // else if (this.$node.css('display') === 'block'){
+  // if (this.$node.css('display') === 'block'){
   //   this.$node.css('width', '20px');
   // }
 

@@ -26,8 +26,10 @@ body, a:link, a:visited, a:active{
 
 .lineUpButton {
   background: #92c7eb;
-  background-size: cover;
-  background-position: center;
+  background-color: lightskyblue;
+  position: absolute;
+  left: 63%;
+  top: 10px;
   display: inline-block;
   border: none;
   padding: 20px;
@@ -36,6 +38,7 @@ body, a:link, a:visited, a:active{
   height: 70px;
   transition: all 0.5s;
   cursor: pointer;
+  
  }
  .lineUpButton:hover
  {
@@ -44,6 +47,13 @@ body, a:link, a:visited, a:active{
   background-color: #008CBA;
   color: red;
 }
+
+.lineUpButton:active  /* use Dot here */
+{   
+    background:url(https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwirt4zr_qLeAhXHrVQKHfNFD7cQjRx6BAgBEAU&url=https%3A%2F%2Fwww.amazon.com%2FLightsaber-Sounds-Light-up-Around-Delivery%2Fdp%2FB01FJ3LDIA&psig=AOvVaw1-KvmPzyKqK83ZJicy2XLk&ust=1540604953422604) no-repeat;
+}
+
+
 
 .lineUpC3POs {
   background-size: cover;
@@ -59,7 +69,8 @@ body, a:link, a:visited, a:active{
 }
 
 .musicPlayer {
-
+position: absolute;
+bottom: 0%;
 }
  
 .dancer{
@@ -69,14 +80,27 @@ body, a:link, a:visited, a:active{
 }
 
 .stormTrooperDancer {
-  height: 5px;
+  height: 25%;
   width: 10%;
   border-radius:10px;
   position: absolute;
   content: url("src/stormtrooper.gif");
+  animation-duration: 5s;
+  animation-name: slidein;
+  /* animation-iteration-count: infinite; */
+  animation-direction: alternate;
 }
-.stormTrooperDancer:hover {
-  
+@keyframes slidein {
+from {
+  top: 200px;
+  width: 10%;
+  height: 10%; 
+}
+to {
+  left: 300px;
+  top: 500px;
+  width: 15%;
+  }
 }
 
 
@@ -85,8 +109,13 @@ body, a:link, a:visited, a:active{
 .C3PO {  
   position:absolute;
   height: 25%;
-  width: 25%;
+  width: 10%;
   content: url("src/DancingC3PO.gif");
+}
+
+.C3PO:hover {
+  width: 50px;
+  height: 100px;
 }
 
 .SaberFight {
@@ -95,9 +124,11 @@ body, a:link, a:visited, a:active{
   position: absolute;
   content: url("src/battle.gif");
 }
-.SaberFight:hover {
-    cursor: pointer;
-    animation-name: bounce;
-    -moz-animation-name: bounce;
-  
+
+
+.disco {
+  position: absolute;
+  left: 50%;
+  height: 15%;
+  width: 10%
 }
